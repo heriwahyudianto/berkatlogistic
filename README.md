@@ -1,0 +1,2 @@
+# berkatlogistic
+1. Membuat website/mobile apps (host yang free saja untuk prototype) 2. Website / mobile apps berisi : a. Button yang diisi oleh user umum dimasukan nomer HP b. Bisa langsung convert menjadi link ke WA 3. Tujuan web: Agar bisa menconvert link ke WA tanpa harus memasukan ke contact HP 4. Kirimkan link address ke WA 0812-4936-8001, dengan Format WA: Study Case IT_Nama_Posisi dan link anda
