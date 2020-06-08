@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkat Logistic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+</head>
+<body class="m0 p2">
+    <h1 class="h1">Kirim Pesan Whatsapp</h1>
+    <form action="#" method="post">
+        <p><label for="tel">International mobile phone number</label><br>
+            <input type="tel" value="" placeholder="No Telp" id="tel" name="tel" pattern="[0-9]{3}[0-9]{8,13}">
+        </p>
+        <p>
+            <label for="pesan">Pesan</label><br>
+            <input type="text" value="" placeholder="Pesan" id="pesan" name="pesan">
+        </p>
+        <p>
+            <button type="button" onclick="kirim()">Kirim</button>
+        </p>
+    </form>
+    <script type="text/javascript">
+    function kirim(){
+        //encoded message
+        var pesan = encodeURI(document.getElementById('pesan').value);
+        //validate phone
+        var phone = document.getElementById('tel').value
+        var phonePattern =  new RegExp(/^(\+\d{1,3})?\d{8,10}$/);
+        var isValidPhone = phonePattern.test(phone);
+        if (isValidPhone) {
+            location.href = "https://api.whatsapp.com/send?phone="+ phone +"&text=" + pesan;
+        } else {
+            alert('Phone # not valid')
+        }
+    }
+    </script>
+</body>
+</html>
